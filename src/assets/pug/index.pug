@@ -4,5 +4,26 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-    body 
+        title Clock.js 
+        // CSS only
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' crossorigin='anonymous')
+        link(rel="stylesheet", href="assets/css/style.css")
+    body.bg-dark.vh-100.text-white.d-flex.align-items-center.justify-content-center
+        .container-fluid 
+            .container
+                .row 
+                    h1.neonText.text-center#digitalClock_heading digital clock
+                .row
+                    section.rounded.col-4.offset-4.d-flex.justify-content-around.align-items-center.fs-1.text-center#digital_clock
+                        span.d-inline-block.w-100#digital_hour 
+                        span.d-inline-block.w-100.digital_separator :
+                        span.d-inline-block.w-100#digital_minute   
+                        span.d-inline-block.w-100.digital_separator :
+                        span.d-inline-block.w-100#digital_second 
+                        span#status
+                .row 
+                    section.col-2.offset-5.mt-5.d-flex.justify-content-center.align-items-center.text-center#today 
+                        span.d-inline-block.w-100#day 
+                        span.d-inline-block.w-100#month 
+                        span.d-inline-block.w-100#year
+    script(src="assets/js/clock.js")
