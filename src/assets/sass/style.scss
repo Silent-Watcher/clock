@@ -1,6 +1,7 @@
 @import 'global/font';
 @import 'global/reset';
 @import 'keyframes/pulsate';
+@import 'components/particle';
 #digitalClock_heading{
     margin-bottom: 100px;
     animation: pulsate 0.11s ease-in-out infinite alternate;    
