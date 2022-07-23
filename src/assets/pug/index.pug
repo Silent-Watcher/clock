@@ -1,41 +1,13 @@
 doctype html
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Clock.js 
-        //- CSS only
-        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
-        link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' crossorigin='anonymous')
-        link(rel="stylesheet", href="assets/css/style.css")
-    body.bg-dark.vh-100.text-white.d-flex.align-items-start.justify-content-center
-        #preLoader_Wrapper
-            #preLoader
-            span.fs-3.mt-4 loading .. !🤗
+    include includes/_head
+    include includes/_body
+        include includes/components/_preloader
         #particles-js
         .container-fluid 
             .container
-                .row.mt-5
-                    h1.pt-5.text-center#digitalClock_heading welcome to clock.js
-                .row
-                    .col-12.col-sm-8.offset-sm-2.col-md-6.offset-md-3.d-flex.justify-content-center.align-items-center#analogClock_wrapper
-                        section.text-center.rounded-circle.position-relative.d-flex.justify-content-center.align-items-center#analog_clock
-                            span.hand#secondHand
-                            span.hand#minuteHand
-                            span.hand#hourHand
-                .row
-                    section.mt-5.rounded.col-10.offset-1.col-sm-6.offset-sm-3.col-md-4.offset-md-4.d-flex.justify-content-around.align-items-center.fs-1.text-center#digital_clock
-                        span.d-inline-block.w-100#digital_hour 
-                        span.d-inline-block.w-100.digital_separator :
-                        span.d-inline-block.w-100#digital_minute   
-                        span.d-inline-block.w-100.digital_separator :
-                        span.d-inline-block.w-100#digital_second 
-                        span.ms-3#status
-                .row
-                    section.col-10.offset-1.col-sm-4.offset-sm-4.col-md-2.offset-md-5.mt-4.d-flex.justify-content-center.align-items-center.text-center#today 
-                        .d-inline-block.w-100#day 
-                        .d-inline-block.w-100#month 
-                        .d-inline-block.w-100#year
-    script(src='http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js')
-    script(src="assets/js/clock.js")
+                include includes/components/_heading
+                include includes/components/_analogClock
+                include includes/components/_digitalClock
+                include includes/components/_today
+    include includes/_scripts

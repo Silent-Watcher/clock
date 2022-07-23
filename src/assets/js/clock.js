@@ -1,7 +1,7 @@
 'use strict';
 let loader = document.getElementById('preLoader_Wrapper');
-console.log("🚀 ~ file: clock.js ~ line 3 ~ loader", loader)
-window.addEventListener('load',()=>{
+console.log('🚀 ~ file: clock.js ~ line 3 ~ loader', loader);
+window.addEventListener('load', () => {
   loader.hidden = true;
 });
 // digital clock inputs
@@ -42,11 +42,11 @@ function runDigitalClock() {
   let second = date.getSeconds();
   let hour = date.getHours();
   let minute = date.getMinutes();
-  if(hour > 12) {
+  if (hour > 12) {
     hour -= 12;
-    timeStatus.innerHTML  = 'pm';
-  }else{
-    timeStatus.innerHTML  = 'am';
+    timeStatus.innerHTML = 'pm';
+  } else {
+    timeStatus.innerHTML = 'am';
   }
   if (hour < 10) {
     hour = `0${hour}`;
@@ -62,8 +62,7 @@ function runDigitalClock() {
   digitalSecond.innerHTML = second;
 }
 
-
-function runAnalogClock(){
+function runAnalogClock() {
   let date = new Date();
   let second = date.getSeconds();
   let hour = date.getHours();
@@ -139,4 +138,3 @@ particlesJS('particles-js', {
   },
   retina_detect: true,
 });
-
