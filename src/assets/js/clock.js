@@ -1,6 +1,5 @@
 'use strict';
 let loader = document.getElementById('preLoader_Wrapper');
-console.log('🚀 ~ file: clock.js ~ line 3 ~ loader', loader);
 window.addEventListener('load', () => {
   loader.hidden = true;
 });
