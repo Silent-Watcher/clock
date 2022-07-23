@@ -3,7 +3,7 @@
 const digitalHour = document.getElementById('digital_hour');
 const digitalMinute = document.getElementById('digital_minute');
 const digitalSecond = document.getElementById('digital_second');
-const status = document.getElementById('status');
+const timeStatus = document.getElementById('status');
 //
 function getToday() {
   const weekday = [
@@ -36,6 +36,21 @@ function runDigitalClock() {
   let second = date.getSeconds();
   let hour = date.getHours();
   let minute = date.getMinutes();
+  if(hour > 12) {
+    hour -= 12;
+    timeStatus.innerHTML  = 'pm';
+  }else{
+    timeStatus.innerHTML  = 'am';
+  }
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+  if (second < 10) {
+    second = `0${second}`;
+  }
   digitalHour.textContent = hour;
   digitalMinute.innerHTML = minute;
   digitalSecond.innerHTML = second;
@@ -47,18 +62,16 @@ setInterval(() => {
 
 getToday();
 
-
-
 // particle effect
-particlesJS("particles-js", {
+particlesJS('particles-js', {
   particles: {
     number: { value: 15, density: { enable: true, value_area: 800 } },
-    color: { value: "#ffffff" },
+    color: { value: '#ffffff' },
     shape: {
-      type: "circle",
-      stroke: { width: 0, color: "#000000" },
+      type: 'circle',
+      stroke: { width: 0, color: '#000000' },
       polygon: { nb_sides: 5 },
-      image: { src: "img/github.svg", width: 100, height: 100 },
+      image: { src: 'img/github.svg', width: 100, height: 100 },
     },
     opacity: {
       value: 0.5,
@@ -73,26 +86,26 @@ particlesJS("particles-js", {
     line_linked: {
       enable: true,
       distance: 150,
-      color: "#ffffff",
+      color: '#ffffff',
       opacity: 0.4,
       width: 1,
     },
     move: {
       enable: true,
       speed: 6,
-      direction: "none",
+      direction: 'none',
       random: false,
       straight: false,
-      out_mode: "out",
+      out_mode: 'out',
       bounce: false,
       attract: { enable: false, rotateX: 600, rotateY: 1200 },
     },
   },
   interactivity: {
-    detect_on: "canvas",
+    detect_on: 'canvas',
     events: {
-      onhover: { enable: true, mode: "repulse" },
-      onclick: { enable: true, mode: "push" },
+      onhover: { enable: true, mode: 'repulse' },
+      onclick: { enable: true, mode: 'push' },
       resize: true,
     },
     modes: {
