@@ -1,10 +1,11 @@
 @import 'global/font';
 @import 'utilities/margin';
 @import 'global/reset';
-@import 'keyframes/pulsate';
-@import 'keyframes/loader';
+// @import 'keyframes/loader';
 @import 'components/particle';
 @import 'components/analogClock';
 @import 'components/digitalClock';
-@import 'components/loader';
+@import 'keyframes/pulsate';
+// @import 'components/loader';
+@import 'components/copyright';
 @import 'media/AnalogClock_media.scss';

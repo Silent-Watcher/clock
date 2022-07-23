@@ -7,43 +7,6 @@
   font-family: "DM Sans";
 }
 
-@-webkit-keyframes pulsate {
-  100% {
-    /* Larger blur radius */
-    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
-  }
-  0% {
-    /* A slightly smaller blur radius */
-    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #0fa, 0 0 73px #0fa, 0 0 80px #0fa, 0 0 94px #0fa, 0 0 140px #0fa;
-  }
-}
-
-@keyframes pulsate {
-  100% {
-    /* Larger blur radius */
-    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
-  }
-  0% {
-    /* A slightly smaller blur radius */
-    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #0fa, 0 0 73px #0fa, 0 0 80px #0fa, 0 0 94px #0fa, 0 0 140px #0fa;
-  }
-}
-@-webkit-keyframes loader {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes loader {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 canvas {
   display: block;
   vertical-align: bottom;
@@ -106,27 +69,42 @@ canvas {
           animation: pulsate 0.11s ease-in-out infinite alternate;
 }
 
-#preLoader_Wrapper {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-color: #161c2d;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+@-webkit-keyframes pulsate {
+  100% {
+    /* Larger blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+  }
+  0% {
+    /* A slightly smaller blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #0fa, 0 0 73px #0fa, 0 0 80px #0fa, 0 0 94px #0fa, 0 0 140px #0fa;
+  }
 }
-#preLoader_Wrapper #preLoader {
-  z-index: 1001;
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  border: 5px solid #fff;
-  border-top: 5px solid #05d48f;
-  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #0fa, 0 0 0.8rem #0fa, 0 0 2.8rem #0fa, inset 0 0 1.3rem #0fa;
-  -webkit-animation: loader 1s linear infinite;
-          animation: loader 1s linear infinite;
+
+@keyframes pulsate {
+  100% {
+    /* Larger blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+  }
+  0% {
+    /* A slightly smaller blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #0fa, 0 0 73px #0fa, 0 0 80px #0fa, 0 0 94px #0fa, 0 0 140px #0fa;
+  }
+}
+#copyright {
+  z-index: 1;
+  color: #f5f5f5;
+  padding-top: 30px;
+}
+#copyright > span {
+  color: #0fa;
+}
+#copyright > a {
+  cursor: pointer;
+  color: #0fa;
+  transition: all 0.5s ease;
+}
+#copyright > a:hover {
+  color: #09b37a;
 }
 
 @media (max-width: 360px) {

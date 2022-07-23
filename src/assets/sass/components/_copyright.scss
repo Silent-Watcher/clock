@@ -1,0 +1,16 @@
+#copyright{
+    z-index: 1;
+    color: #f5f5f5;
+    padding-top: 30px;
+    > span {
+        color: #0fa;
+    }
+    > a { 
+        cursor: pointer;
+        color: #0fa;
+        transition:all .5s ease;
+        &:hover{
+            color: #09b37a;
+        }
+    }
+}
