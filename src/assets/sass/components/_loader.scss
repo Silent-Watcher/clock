@@ -1,0 +1,26 @@
+#preLoader_Wrapper{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #161c2d;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    #preLoader{
+        z-index: 1001;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        border: 5px solid #fff;
+        border-top: 5px solid #05d48f;
+        box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem #0fa,
+        0 0 0.8rem #0fa,
+        0 0 2.8rem #0fa,
+        inset 0 0 1.3rem #0fa;
+        animation: loader 1s linear  infinite;
+    }
+}

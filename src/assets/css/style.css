@@ -24,6 +24,10 @@
     text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #0fa, 0 0 73px #0fa, 0 0 80px #0fa, 0 0 94px #0fa, 0 0 140px #0fa;
   }
 }
+.mt-6 {
+  margin-top: 100px;
+}
+
 canvas {
   display: block;
   vertical-align: bottom;
@@ -39,8 +43,96 @@ canvas {
   border-radius: 0 0 3px 3px;
 }
 
+#analog_clock {
+  width: 300px;
+  height: 300px;
+  box-shadow: inset 0px 0px 2px 0px #0fa;
+}
+#analog_clock::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #000000;
+  border-radius: 50%;
+  z-index: 11;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #0fa, 0 0 0.8rem #0fa, 0 0 2.8rem #0fa, inset 0 0 1.3rem #0fa;
+}
+#analog_clock .hand {
+  bottom: 50%;
+  position: absolute;
+  left: 50%;
+  border-radius: 20px 20px 0 0;
+  transform-origin: bottom;
+  transform: translate(-50%) rotate(0deg);
+  z-index: 10;
+}
+#analog_clock #minuteHand {
+  width: 5px;
+  height: 40%;
+  background-color: #fff;
+}
+#analog_clock #secondHand {
+  width: 3px;
+  height: 45%;
+  background-color: transparent;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #0fa, 0 0 0.8rem #0fa, 0 0 2.8rem #0fa, inset 0 0 1.3rem #0fa;
+}
+#analog_clock #hourHand {
+  width: 5px;
+  height: 25%;
+  background-color: #fff;
+}
+
 #digitalClock_heading {
   margin-bottom: 100px;
   -webkit-animation: pulsate 0.11s ease-in-out infinite alternate;
           animation: pulsate 0.11s ease-in-out infinite alternate;
+}
+
+@media (max-width: 360px) {
+  #analog_clock {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+#preLoader_Wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #161c2d;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#preLoader_Wrapper #preLoader {
+  z-index: 1001;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 5px solid #fff;
+  border-top: 5px solid #05d48f;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #0fa, 0 0 0.8rem #0fa, 0 0 2.8rem #0fa, inset 0 0 1.3rem #0fa;
+  -webkit-animation: loader 1s linear infinite;
+          animation: loader 1s linear infinite;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=style.css.map */

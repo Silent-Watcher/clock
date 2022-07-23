@@ -1,0 +1,51 @@
+#analog_clock{
+    width: 300px;
+    height: 300px;
+    box-shadow: inset 0px 0px 2px 0px #0fa;
+    &::after{
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: #000000;
+        border-radius: 50%;
+        z-index: 11;
+        box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem #0fa,
+        0 0 0.8rem #0fa,
+        0 0 2.8rem #0fa,
+        inset 0 0 1.3rem #0fa;
+    }
+    .hand{
+        $rotation : 0;
+        bottom: 50%;
+        position: absolute;
+        left: 50%;
+        border-radius: 20px  20px 0 0 ;
+        transform-origin: bottom;
+        transform: translate(-50%) rotate(calc(1deg * $rotation));  
+        z-index: 10; 
+    }
+    #minuteHand{
+        width: 5px;   
+        height: 40%;
+        background-color: #fff;
+    }
+    #secondHand{
+        width: 3px;   
+        height: 45%;
+        background-color: transparent;
+        box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem #0fa,
+        0 0 0.8rem #0fa,
+        0 0 2.8rem #0fa,
+        inset 0 0 1.3rem #0fa;
+    }
+    #hourHand{
+        width: 5px;   
+        height: 25%;
+        background-color: #fff;
+    }
+}

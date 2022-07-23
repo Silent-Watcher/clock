@@ -1,10 +1,16 @@
 'use strict';
+let loader = document.getElementById('preLoader_Wrapper');
+console.log("🚀 ~ file: clock.js ~ line 3 ~ loader", loader)
+window.addEventListener('load',()=>{
+  loader.hidden = true;
+});
 // digital clock inputs
 const digitalHour = document.getElementById('digital_hour');
 const digitalMinute = document.getElementById('digital_minute');
 const digitalSecond = document.getElementById('digital_second');
 const timeStatus = document.getElementById('status');
 //
+
 function getToday() {
   const weekday = [
     'Sunday',
@@ -56,8 +62,23 @@ function runDigitalClock() {
   digitalSecond.innerHTML = second;
 }
 
+
+function runAnalogClock(){
+  let date = new Date();
+  let second = date.getSeconds();
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  const analogHour = document.getElementById('hourHand');
+  const analogMinute = document.getElementById('minuteHand');
+  const analogSecond = document.getElementById('secondHand');
+  analogSecond.style.transform = `rotate(${second * 6}deg)`;
+  analogMinute.style.transform = `rotate(${minute * 6}deg)`;
+  analogHour.style.transform = `rotate(${hour * 30}deg)`;
+}
+
 setInterval(() => {
   runDigitalClock();
+  runAnalogClock();
 }, 1000);
 
 getToday();
@@ -65,13 +86,13 @@ getToday();
 // particle effect
 particlesJS('particles-js', {
   particles: {
-    number: { value: 15, density: { enable: true, value_area: 800 } },
+    number: { value: 25, density: { enable: true, value_area: 800 } },
     color: { value: '#ffffff' },
     shape: {
       type: 'circle',
       stroke: { width: 0, color: '#000000' },
       polygon: { nb_sides: 5 },
-      image: { src: 'img/github.svg', width: 100, height: 100 },
+      image: { src: '', width: 100, height: 100 },
     },
     opacity: {
       value: 0.5,
@@ -118,3 +139,4 @@ particlesJS('particles-js', {
   },
   retina_detect: true,
 });
+
