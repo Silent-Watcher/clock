@@ -69,6 +69,16 @@ canvas {
           animation: pulsate 0.11s ease-in-out infinite alternate;
 }
 
+::-webkit-scrollbar {
+  background-color: #232323;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0fa;
+  border-radius: 20px;
+}
+
 @-webkit-keyframes pulsate {
   100% {
     /* Larger blur radius */
