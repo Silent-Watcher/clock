@@ -38,9 +38,9 @@ function getToday() {
 
 function runDigitalClock() {
   let date = new Date();
-  let second = date.getSeconds();
-  let hour = date.getHours();
-  let minute = date.getMinutes();
+  let second  = date.getSeconds();
+  let hour  = date.getHours();
+  let minute  = date.getMinutes();
   if (hour > 12) {
     hour -= 12;
     timeStatus.innerHTML = 'pm';
